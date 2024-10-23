@@ -44,7 +44,7 @@ class SalesHeaderHTMLMod implements SalesModInterface
 
     public function renderField(Translator $i18n, SalesDocument $model, string $field): ?string
     {
-        if ($field == 'actualizarDatosClientBtn' && $model->codigo) {
+        if ($field == 'actualizarDatosClientBtn' && $model->codigo && $model->editable) {
             return '<div class="col-sm"><div class="mb-3">'
                 . '<button type="button" class="btn btn-outline-secondary btn-spin-action" onclick="actualizarDatosClientBtn()"><i class="fa-solid fa-rotate"></i> Actualizar datos del cliente</button>'
                 . '</div></div>';
